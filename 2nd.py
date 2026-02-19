@@ -8,9 +8,13 @@ class ArrayQueue:
         return self.size
     def is_empty(self):
         return self.size==0
-    def enqueue(self,e):
-        self.data.append(e)
-        self.size += 1
+    def first(self):
+        if self.is_empty():
+            raise empty("queue is empty")
+        return self.data[self.front]
+    def display(self):
+        for i in self.data:
+            print (i)
     def dequeue(self):
         if self.is_empty():
             raise empty("queue is empty")
@@ -19,10 +23,12 @@ class ArrayQueue:
         self.front +=1
         self.size -=1
         return value
-    def first(self):
-        if self.is_empty():
-            raise empty("queue is empty")
-        return self.data[self.front]
+    def enqueue(self,e):
+        if self.size == len(self.data):
+            self.resise(2*len(self.data))
+            avail 
+
+
 
 
 q = ArrayQueue()
